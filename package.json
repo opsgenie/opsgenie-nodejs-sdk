@@ -1,0 +1,44 @@
+{
+  "name": "opsgenie-sdk",
+  "version": "0.0.1",
+  "description": "OpsGenie Node.js SDK",
+  "main": "./index.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/srhtcn/opsgenie-nodejs-sdk.git"
+  },
+  "keywords": [
+    "opsgenie-sdk",
+    "opsgenie",
+    "rest",
+    "api",
+    "sdk"
+  ],
+  "dependencies": {},
+  "author": "Serhat Can",
+  "license": "MIT",
+  "engines": {
+    "node": ">= v0.6.0"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "lib",
+      "data-cover-never": "node_modules"
+    }
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "~2.11.9",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-jsdoc": "^2.1.0",
+    "grunt-simple-mocha": "^0.4.1",
+    "mocha": "^2.5.3"
+  },
+  "readmeFilename": "README.md"
+}
