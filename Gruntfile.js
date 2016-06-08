@@ -25,30 +25,15 @@ module.exports = function (grunt) {
                 src: 'test/*.js'
             }
         }
-        /*,
-         jsdoc: {
-         dist: {
-         src: ['lib/!*'],
-         jsdoc: './node_modules/.bin/jsdoc',
-         options: {
-         destination: 'docs/jsdoc/',
-         configure: './node_modules/jsdoc/conf.json',
-         template: './node_modules/ink-docstrap/template'
-         }
-         }
-         }
-         */
     });
 
-    // Load grunt tasks from npm packages
     grunt.loadNpmTasks("grunt-contrib-jshint");
     grunt.loadNpmTasks('grunt-simple-mocha');
-    // grunt.loadNpmTasks('grunt-jsdoc');
 
     // Test task
     grunt.registerTask("test", ["simplemocha"]);
 
-    // Default task.
+    // Default task
     grunt.registerTask("default", ["jshint", "simplemocha"]);
 
 };

@@ -10,4 +10,4 @@ before_install:
 after_script:
   - mocha -t 60000 --require blanket --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js
 after_success:
-  - if [ $TRAVIS_NODE_VERSION = '0.10' ] && [ $TRAVIS_BRANCH = 'master' ] && [ $TRAVIS_PULL_REQUEST = 'false' ]; then sh generate-doc.sh; fi
+  - if [ $TRAVIS_NODE_VERSION = '0.10' ] && [ $TRAVIS_BRANCH = 'master' ] && [ $TRAVIS_PULL_REQUEST = 'false' ];
