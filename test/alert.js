@@ -3,6 +3,8 @@
 var chai = require('chai'),
     expect = chai.expect;
 
+var nock = require('nock');
+
 var opsgenie = require('../');
 require('./configure');
 
