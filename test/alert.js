@@ -51,14 +51,55 @@ describe('ALERT_API_TEST', function () {
                 expect(error).equal(null);
                 expect(alert.message).to.contain("Test2");
                 alerts.push(alert);
+                done();
+            });
+        });
+    });
 
-                opsgenie.alert.list({createdAfter: timeInMs * 1000000}, function (error, listAlerts) {
+    it('create and close success', function (done) {
+        var create_alert_json = {
+            "message": "Test3",
+            "tags": ["tag3"]
+        };
+        opsgenie.alert.create(create_alert_json, function (error, alertCreateSuccess) {
+            expect(error).equal(null);
+            expect(alertCreateSuccess.httpStatusCode).to.equal(200);
+
+            opsgenie.alert.get({"id": alertCreateSuccess.alertId}, function (error, alert) {
+                expect(error).equal(null);
+                expect(alert.message).to.contain("Test3");
+                alerts.push(alert);
+
+                opsgenie.alert.close({"id": alert.id}, function (error, closeResult) {
                     expect(error).equal(null);
-                    expect(listAlerts.alerts.length).to.equal(alerts.length);
+                    expect(closeResult.httpStatusCode).to.equal(200);
                     done();
                 });
             });
         });
     });
+
+    it('list and delete all created alerts', function (done) {
+        opsgenie.alert.list({createdAfter: timeInMs * 1000000}, function (error, listAlerts) {
+            expect(error).equal(null);
+            expect(listAlerts.alerts.length).to.equal(alerts.length);
+
+            var doneCount = 0;
+            var alertsLength = alerts.length;
+            for (var i = 0; i < alertsLength; i++) {
+                opsgenie.alert.deleteById(alerts[i].id, function (error, deleteResult) {
+                    expect(error).equal(null);
+                    expect(deleteResult.code).to.equal(200);
+                    doneCount++;
+
+                    if (doneCount == alertsLength) {
+                        done();
+                    }
+                });
+            }
+
+        });
+    });
+
 
 });
