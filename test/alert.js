@@ -84,18 +84,20 @@ describe('ALERT_API_TEST', function () {
             expect(error).equal(null);
             expect(listAlerts.alerts.length).to.equal(alerts.length);
 
+            var deleteSuccess = function (error, deleteResult) {
+                expect(error).equal(null);
+                expect(deleteResult.code).to.equal(200);
+                doneCount++;
+
+                if (doneCount === alertsLength) {
+                    done();
+                }
+            };
+            
             var doneCount = 0;
             var alertsLength = alerts.length;
             for (var i = 0; i < alertsLength; i++) {
-                opsgenie.alert.deleteById(alerts[i].id, function (error, deleteResult) {
-                    expect(error).equal(null);
-                    expect(deleteResult.code).to.equal(200);
-                    doneCount++;
-
-                    if (doneCount == alertsLength) {
-                        done();
-                    }
-                });
+                opsgenie.alert.deleteById(alerts[i].id, deleteSuccess);
             }
 
         });
