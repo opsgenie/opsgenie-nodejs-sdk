@@ -1,9 +1,8 @@
 "use strict";
 
-var chai = require('chai'),
-    expect = chai.expect;
-
+var expect = require('chai').expect;
 var nock = require('nock');
+var waterfall = require("async/waterfall");
 
 var opsgenie = require('../');
 require('./configure');
@@ -61,21 +60,36 @@ describe('ALERT_API_TEST', function () {
             "message": "Test3",
             "tags": ["tag3"]
         };
-        opsgenie.alert.create(create_alert_json, function (error, alertCreateSuccess) {
-            expect(error).equal(null);
-            expect(alertCreateSuccess.httpStatusCode).to.equal(200);
 
-            opsgenie.alert.get({"id": alertCreateSuccess.alertId}, function (error, alert) {
-                expect(error).equal(null);
-                expect(alert.message).to.contain("Test3");
-                alerts.push(alert);
-
+        waterfall([
+            function (callback) {
+                opsgenie.alert.create(create_alert_json, function (error, alertCreateSuccess) {
+                    expect(error).equal(null);
+                    expect(alertCreateSuccess.httpStatusCode).to.equal(200);
+                    callback(null, alertCreateSuccess);
+                });
+            },
+            function (alertCreateSuccess, callback) {
+                opsgenie.alert.get({"id": alertCreateSuccess.alertId}, function (error, alert) {
+                    expect(error).equal(null);
+                    expect(alert.message).to.contain("Test3");
+                    alerts.push(alert);
+                    callback(null, alert);
+                });
+            },
+            function (alert, callback) {
                 opsgenie.alert.close({"id": alert.id}, function (error, closeResult) {
                     expect(error).equal(null);
                     expect(closeResult.httpStatusCode).to.equal(200);
-                    done();
+                    callback(null, 'done');
+                    // done();
                 });
-            });
+            }
+        ], function (err, result) {
+            expect(err).equal(null);
+            if (result === "done") {
+                done();
+            }
         });
     });
 
@@ -93,7 +107,7 @@ describe('ALERT_API_TEST', function () {
                     done();
                 }
             };
-            
+
             var doneCount = 0;
             var alertsLength = alerts.length;
             for (var i = 0; i < alertsLength; i++) {

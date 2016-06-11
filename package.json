@@ -30,6 +30,7 @@
     }
   },
   "devDependencies": {
+    "async": "^2.0.0-rc.6",
     "chai": "^3.5.0",
     "coveralls": "~2.11.9",
     "grunt": "^1.0.1",
