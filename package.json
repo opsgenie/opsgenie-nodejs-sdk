@@ -18,7 +18,10 @@
     "sdk"
   ],
   "dependencies": {},
-  "author": "Serhat Can",
+  "author": {
+    "name": "Serhat Can",
+    "email": "can.srht@gmail.com"
+  },
   "license": "MIT",
   "engines": {
     "node": ">= v0.6.0"
