@@ -35,7 +35,7 @@ Node.js version >=0.6.x is required.
 var opsgenie = require('opsgenie-sdk');
 
 opsgenie.configure({
-    'api_key': 'd1871497-38bc-4222-9063-32062fc6f2f4'
+    'api_key': 'your_api_key'
 });
 ```
 
