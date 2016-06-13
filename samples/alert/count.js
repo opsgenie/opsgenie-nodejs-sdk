@@ -3,7 +3,8 @@
 var opsgenie = require('../../');
 require('../configure');
 
-opsgenie.alert.count(function (error, alert) {
+// data as {} or for ex, {createdAfter: timeInMs * 1000000}
+opsgenie.alert.count({}, function (error, alert) {
     if (error) {
         console.error(error);
     } else {
