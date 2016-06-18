@@ -8,7 +8,7 @@ opsgenie.configure({
 
 // optional for dev purposes
 /*opsgenie.headers({
-    
+
 });*/
 
 opsgenie.alert.get({id: "41fbe997-03cc-40ff-a4c4-7674b86b1490"}, function (error, alert) {
