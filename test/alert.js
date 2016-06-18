@@ -16,11 +16,11 @@ describe('ALERT_API_TEST', function () {
     this.timeout(60000);
 
     // use NOCK_OFF=true mocha -t 60000 for testing against real server
-    /*if (process.env.NOCK_OFF !== 'true') {
+    if (process.env.NOCK_OFF !== 'true') {
         require('./mocks/alert');
     } else {
 
-    }*/
+    }
 
     var timeInMs = Date.now();
 
@@ -33,11 +33,13 @@ describe('ALERT_API_TEST', function () {
 
         opsgenie.alert.create(create_alert_json, function (error, alertCreateSuccess) {
             expect(error).equal(null);
+            console.log("Alertsuccess:", alertCreateSuccess);
 
             // TODO: create a method for getById(id, function)
             opsgenie.alert.get({"id": alertCreateSuccess.alertId}, function (error, alert) {
                 expect(error).equal(null);
                 expect(alert.message).to.contain("Test alert1");
+                console.log("Alert: ", alert);
                 done();
             });
         });
