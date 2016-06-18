@@ -22,9 +22,9 @@
   },
   "author": {
     "name": "Serhat Can",
-    "email": "can.srht@gmail.com"
+    "email": "serhat@opsgenie.com"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "engines": {
     "node": ">= v0.6.0"
   },
