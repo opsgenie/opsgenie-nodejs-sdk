@@ -13,14 +13,14 @@ require('./configure');
  */
 describe('ALERT_API_TEST', function () {
 
-    //this.timeout(60000);
+    this.timeout(60000);
 
     // use NOCK_OFF=true mocha -t 60000 for testing against real server
-    if (process.env.NOCK_OFF !== 'true') {
+    /*if (process.env.NOCK_OFF !== 'true') {
         require('./mocks/alert');
     } else {
 
-    }
+    }*/
 
     var timeInMs = Date.now();
 
