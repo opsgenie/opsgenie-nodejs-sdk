@@ -9,6 +9,7 @@ var get_alert_json = {
 
 opsgenie.alert.get(get_alert_json, function (error, alert) {
     if (error) {
+        console.log("Error status: " + error.httpStatusCode);
         console.error(error);
     } else {
         console.log("Get Alert Response for id:" + get_alert_json.id);
