@@ -138,99 +138,162 @@ nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
             'cf-ray': '2b18b45d53450f69-FRA' });
 
 
+
 nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
     .post('/v1/json/alert/', {"message":"Long list of adding test","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
-    .reply(200, {"took":201,"code":200,"alertId":"f6f14723-5340-4f90-aeba-44229dedbb82","message":"alert created","status":"successful"}, { date: 'Sun, 19 Jun 2016 13:33:44 GMT',
+    .reply(200, {"took":82,"code":200,"alertId":"cf74a7af-5c88-4e78-a36e-572e62465c7e","message":"alert created","status":"successful"}, { date: 'Sun, 19 Jun 2016 17:13:41 GMT',
         'content-type': 'application/json; charset=UTF-8',
         'transfer-encoding': 'chunked',
         connection: 'close',
-        'set-cookie': [ '__cfduid=dbe483a63e06a0e9280ac2c2fc7e2320e1466343223; expires=Mon, 19-Jun-17 13:33:43 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
-        took: '201',
+        'set-cookie': [ '__cfduid=dc934ffda16f40b72e89dad2fff6f0b3e1466356420; expires=Mon, 19-Jun-17 17:13:40 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
+        took: '82',
         server: 'cloudflare-nginx',
-        'cf-ray': '2b575aba881115d7-FRA' });
+        'cf-ray': '2b589cecc01215d7-FRA' });
 
 
 nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
-    .post('/v1/json/alert/recipient', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","recipient":"user1@opsgenie.com","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
-    .reply(200, {"took":74,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 13:33:44 GMT',
+    .post('/v1/json/alert/recipient', {"id":"cf74a7af-5c88-4e78-a36e-572e62465c7e","recipient":"user1@opsgenie.com","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":44,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 17:13:41 GMT',
         'content-type': 'application/json; charset=UTF-8',
         'transfer-encoding': 'chunked',
         connection: 'close',
-        'set-cookie': [ '__cfduid=d7bf466826d00651369b9ddb793ffe7801466343224; expires=Mon, 19-Jun-17 13:33:44 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
-        took: '74',
-        server: 'cloudflare-nginx',
-        'cf-ray': '2b575ac127202666-FRA' });
-
-
-nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
-    .post('/v1/json/alert/team', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","team":"team1","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
-    .reply(200, {"took":84,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 13:33:45 GMT',
-        'content-type': 'application/json; charset=UTF-8',
-        'transfer-encoding': 'chunked',
-        connection: 'close',
-        'set-cookie': [ '__cfduid=dc3e6d1b98e8aaf875243f741103cdeb91466343225; expires=Mon, 19-Jun-17 13:33:45 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
-        took: '84',
-        server: 'cloudflare-nginx',
-        'cf-ray': '2b575ac550d12666-FRA' });
-
-
-nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
-    .post('/v1/json/alert/tags', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","tags":"tag1, tag2","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
-    .reply(200, {"took":50,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 13:33:46 GMT',
-        'content-type': 'application/json; charset=UTF-8',
-        'transfer-encoding': 'chunked',
-        connection: 'close',
-        'set-cookie': [ '__cfduid=dfa48c12666d4e8b5358eb02b85f0b97d1466343226; expires=Mon, 19-Jun-17 13:33:46 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
-        took: '50',
-        server: 'cloudflare-nginx',
-        'cf-ray': '2b575acc4dbb0f45-FRA' });
-
-
-nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
-    .post('/v1/json/alert/details', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","details":{"prop1":"val1","prop2":"val2"},"apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
-    .reply(200, {"took":50,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 13:33:47 GMT',
-        'content-type': 'application/json; charset=UTF-8',
-        'transfer-encoding': 'chunked',
-        connection: 'close',
-        'set-cookie': [ '__cfduid=dafc1787e37b7decfe03204da5b7686ad1466343227; expires=Mon, 19-Jun-17 13:33:47 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
-        took: '50',
-        server: 'cloudflare-nginx',
-        'cf-ray': '2b575ad2dad5270e-FRA' });
-
-
-nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
-    .get('/v1/json/alert/recipient', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","details":{"prop1":"val1","prop2":"val2"},"apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
-    .query({"id":"f6f14723-5340-4f90-aeba-44229dedbb82","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
-    .reply(200, {"took":27,"groups":{},"users":[{"method":"","state":"notactive","stateChangedAt":1466343224780,"username":"user1@opsgenie.com"}]}, { date: 'Sun, 19 Jun 2016 13:33:47 GMT',
-        'content-type': 'application/json; charset=UTF-8',
-        'transfer-encoding': 'chunked',
-        connection: 'close',
-        'set-cookie': [ '__cfduid=ddf65e563068c2eaf338faf3f1c5347401466343227; expires=Mon, 19-Jun-17 13:33:47 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
-        took: '27',
-        server: 'cloudflare-nginx',
-        'cf-ray': '2b575ad5961b2798-FRA' });
-
-
-nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
-    .post('/v1/json/alert/takeOwnership', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
-    .reply(200, {"took":43,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 13:33:49 GMT',
-        'content-type': 'application/json; charset=UTF-8',
-        'transfer-encoding': 'chunked',
-        connection: 'close',
-        'set-cookie': [ '__cfduid=deae5b9df7e817e39433ae73b200fd55e1466343229; expires=Mon, 19-Jun-17 13:33:49 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
+        'set-cookie': [ '__cfduid=d4b6baeec19f575a3dd348e8f798999e21466356421; expires=Mon, 19-Jun-17 17:13:41 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
         took: '44',
         server: 'cloudflare-nginx',
-        'cf-ray': '2b575add621e26b4-FRA' });
+        'cf-ray': '2b589cf32f4015d7-FRA' });
 
 
 nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
-    .get('/v1/json/alert/', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
-    .query({"id":"f6f14723-5340-4f90-aeba-44229dedbb82","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
-    .reply(200, {"owner":"System","took":11,"acknowledged":false,"teams":["team1"],"count":1,"description":"","source":"144.122.26.157","message":"Long list of adding test","isSeen":true,"tags":["tag1","tag2"],"createdAt":1466343224033000200,"systemData":{"integrationType":"API","integrationName":"Default API","integrationId":"616f9d46-d46d-475c-ae5a-1d77e866747f"},"recipients":["user1@opsgenie.com"],"tinyId":"380","alias":"f6f14723-5340-4f90-aeba-44229dedbb82","details":{"prop1":"val1","prop2":"val2"},"id":"f6f14723-5340-4f90-aeba-44229dedbb82","actions":[],"entity":"","updatedAt":1466343229132000300,"status":"open"}, { date: 'Sun, 19 Jun 2016 13:33:49 GMT',
+    .post('/v1/json/alert/team', {"id":"cf74a7af-5c88-4e78-a36e-572e62465c7e","team":"team1","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":62,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 17:13:43 GMT',
         'content-type': 'application/json; charset=UTF-8',
         'transfer-encoding': 'chunked',
         connection: 'close',
-        'set-cookie': [ '__cfduid=d8ab501db2a7e3805918fa86bac86fa3c1466343229; expires=Mon, 19-Jun-17 13:33:49 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
-        took: '11',
+        'set-cookie': [ '__cfduid=d7c417365e94a1dbb960ee9f39b03a06e1466356423; expires=Mon, 19-Jun-17 17:13:43 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
+        took: '62',
         server: 'cloudflare-nginx',
-        'cf-ray': '2b575adfc3d015a7-FRA' });
+        'cf-ray': '2b589cfc54d52354-FRA' });
+
+
+nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
+    .post('/v1/json/alert/tags', {"id":"cf74a7af-5c88-4e78-a36e-572e62465c7e","tags":"tag1, tag2","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":81,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 17:14:03 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=d4547690aa7227c5256d5ee6c1addb0291466356443; expires=Mon, 19-Jun-17 17:14:03 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
+        took: '81',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b589d79dc2e15a7-FRA' });
+
+
+nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
+    .post('/v1/json/alert/details', {"id":"cf74a7af-5c88-4e78-a36e-572e62465c7e","details":{"prop1":"val1","prop2":"val2"},"apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":63,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 17:14:03 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=de7d027368cf9ceb47c8a798c3cbbac601466356443; expires=Mon, 19-Jun-17 17:14:03 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
+        took: '63',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b589d7ce4e02768-FRA' });
+
+
+nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
+    .get('/v1/json/alert/recipient')
+    .query({"id":"cf74a7af-5c88-4e78-a36e-572e62465c7e","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":17,"groups":{},"users":[{"method":"","state":"notactive","stateChangedAt":1466356421867,"username":"user1@opsgenie.com"}]}, { date: 'Sun, 19 Jun 2016 17:14:04 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=d556a12830808e7a614c6b53d31eb37fa1466356444; expires=Mon, 19-Jun-17 17:14:04 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
+        took: '17',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b589d7f619f2354-FRA' });
+
+
+nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
+    .post('/v1/json/alert/takeOwnership', {"id":"cf74a7af-5c88-4e78-a36e-572e62465c7e","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":45,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 17:14:04 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=d1300197333e03e687bce4a77089ca5f51466356444; expires=Mon, 19-Jun-17 17:14:04 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
+        took: '45',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b589d818dd426de-FRA' });
+
+
+nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
+    .get('/v1/json/alert/')
+    .query({"id":"cf74a7af-5c88-4e78-a36e-572e62465c7e","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"owner":"System","took":9,"acknowledged":false,"teams":["team1"],"count":1,"description":"","source":"144.122.26.157","message":"Long list of adding test","isSeen":true,"tags":["tag1","tag2"],"createdAt":1466356421227000300,"systemData":{"integrationType":"API","integrationName":"Default API","integrationId":"616f9d46-d46d-475c-ae5a-1d77e866747f"},"recipients":["user1@opsgenie.com"],"tinyId":"435","alias":"cf74a7af-5c88-4e78-a36e-572e62465c7e","details":{"prop1":"val1","prop2":"val2"},"id":"cf74a7af-5c88-4e78-a36e-572e62465c7e","actions":[],"entity":"","updatedAt":1466356444512000300,"status":"open"}, { date: 'Sun, 19 Jun 2016 17:14:04 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=d8a234e7dc356f16e06f74012fa9a806d1466356444; expires=Mon, 19-Jun-17 17:14:04 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
+        took: '10',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b589d83d1322798-FRA' });
+
+
+nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
+    .post('/v1/json/alert/', {"message":"remove tags details and assign testing","tags":["tag1","tag2","tag3","tag4"],"description":"This is the description of the remove test","details":{"prop1":"val1","prop2":"val2","prop3":"val3","prop4":"val4"},"apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":73,"code":200,"alertId":"3ebaba07-9266-4c8f-a1fc-32e21265afc1","message":"alert created","status":"successful"}, { date: 'Sun, 19 Jun 2016 17:14:05 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=d0783a071dab67e077602ad42fd02d7fb1466356445; expires=Mon, 19-Jun-17 17:14:05 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
+        took: '73',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b589d85ed5726de-FRA' });
+
+
+nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
+    .delete('/v1/json/alert/tags')
+    .query({"id":"3ebaba07-9266-4c8f-a1fc-32e21265afc1","tags":["tag1", "tag2"],"apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":52,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 17:14:05 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=d84dffea1a0802c7fd87b8164aeb5c7c21466356445; expires=Mon, 19-Jun-17 17:14:05 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
+        took: '52',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b589d8885970f45-FRA' });
+
+
+nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
+    .delete('/v1/json/alert/details')
+    .query({"id":"3ebaba07-9266-4c8f-a1fc-32e21265afc1","keys":["prop1","prop2"],"apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":103,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 17:14:06 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=ddc3489a2cc848fac5267b4eb8316f4d61466356446; expires=Mon, 19-Jun-17 17:14:06 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
+        took: '103',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b589d8b8973232a-FRA' });
+
+nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
+    .post('/v1/json/alert/assign', {"id":"3ebaba07-9266-4c8f-a1fc-32e21265afc1","owner":"user1@opsgenie.com","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":119,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 17:14:07 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=de3690a88a4401f5c0b6b068f166e23701466356446; expires=Mon, 19-Jun-17 17:14:06 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
+        took: '120',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b589d8ea8f42768-FRA' });
+
+
+nock('https://api.opsgeni.us:443', {"encodedQueryParams":true})
+    .get('/v1/json/alert/')
+    .query({"id":"3ebaba07-9266-4c8f-a1fc-32e21265afc1","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"owner":"user1@opsgenie.com","took":7,"acknowledged":false,"teams":[],"count":1,"description":"This is the description of the remove test","source":"144.122.26.157","message":"remove tags details and assign testing","isSeen":false,"tags":["tag3","tag4"],"createdAt":1466356445208000300,"systemData":{"integrationType":"API","integrationName":"Default API","integrationId":"616f9d46-d46d-475c-ae5a-1d77e866747f"},"recipients":["user1@opsgenie.com"],"tinyId":"436","alias":"3ebaba07-9266-4c8f-a1fc-32e21265afc1","details":{"prop3":"val3","prop4":"val4"},"id":"3ebaba07-9266-4c8f-a1fc-32e21265afc1","actions":[],"entity":"","updatedAt":1466356447105000400,"status":"open"}, { date: 'Sun, 19 Jun 2016 17:14:08 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=d8f7153bd5069579a8a0ae934b2eb3ae91466356447; expires=Mon, 19-Jun-17 17:14:07 GMT; path=/; domain=.opsgeni.us; HttpOnly' ],
+        took: '7',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b589d9504002798-FRA' });

@@ -16,14 +16,11 @@ require('./configure');
  * to avoid callback hell problem
  */
 describe('ALERT_API_TEST', function () {
-
     this.timeout(60000);
 
     // use NOCK_OFF=true mocha -t 60000 for testing against real server
     if (process.env.NOCK_OFF !== 'true') {
         require('./mocks/alert');
-    } else {
-
     }
 
     var timeInMs = Date.now();
@@ -37,13 +34,10 @@ describe('ALERT_API_TEST', function () {
 
         opsgenie.alert.create(create_alert_json, function (error, alertCreateSuccess) {
             expect(error).equal(null);
-            console.log("Alertsuccess:", alertCreateSuccess);
 
-            // TODO: create a method for getById(id, function)
             opsgenie.alert.get({"id": alertCreateSuccess.alertId}, function (error, alert) {
                 expect(error).equal(null);
                 expect(alert.message).to.contain("Test alert1");
-                console.log("Alert: ", alert);
                 done();
             });
         });
@@ -269,6 +263,89 @@ describe('ALERT_API_TEST', function () {
         });
 
     });
+
+    it('removeTags, removeDetails, assign success', function (done) {
+
+        var create_alert_json = {
+            "message": "remove tags details and assign testing",
+            "tags": ["tag1", "tag2", "tag3", "tag4"],
+            "description": "This is the description of the remove test",
+            "details": {
+                "prop1": "val1",
+                "prop2": "val2",
+                "prop3": "val3",
+                "prop4": "val4"
+            }
+        };
+
+        waterfall([
+            function (callback) {
+                opsgenie.alert.create(create_alert_json, function (error, alertCreateSuccess) {
+                    expect(error).equal(null);
+                    expect(alertCreateSuccess.httpStatusCode).to.equal(200);
+                    callback(null, alertCreateSuccess.alertId);
+                });
+            },
+            function (alertId, callback) { // Remove Tags
+                var remove_tags_json = {
+                    "id": alertId,
+                    "tags": ["tag1", "tag2"]
+                };
+
+                opsgenie.alert.removeTags(remove_tags_json, function (error, removeTagsSuccess) {
+                    expect(error).equal(null);
+                    expect(removeTagsSuccess.code).to.equal(200);
+                    callback(null, alertId);
+                });
+            },
+            function (alertId, callback) { // Remove Details
+                var remove_details_json = {
+                    "id": alertId,
+                    "keys": ["prop1", "prop2"]
+                };
+
+                opsgenie.alert.removeDetails(remove_details_json, function (error, removeDetailsSuccess) {
+                    expect(error).equal(null);
+                    expect(removeDetailsSuccess.code).to.equal(200);
+                    callback(null, alertId);
+                });
+            },
+            function (alertId, callback) { // Assign
+                var assign_json = {
+                    "id": alertId,
+                    "owner": "user1@opsgenie.com"
+                };
+
+                opsgenie.alert.assign(assign_json, function (error, assignSuccess) {
+                    expect(error).equal(null);
+                    expect(assignSuccess.code).to.equal(200);
+                    callback(null, alertId);
+                });
+            },
+            function (alertId, callback) {
+
+                opsgenie.alert.get({"id": alertId}, function (error, alert) {
+                    expect(error).equal(null);
+                    expect(alert.message).to.equal("remove tags details and assign testing");
+                    expect(alert.details).to.have.all.keys('prop3', 'prop4');
+                    expect(alert.details.prop1).to.equal(undefined);
+                    expect(alert.details.prop2).to.equal(undefined);
+                    expect(alert.tags.length).to.equal(2);
+                    expect(alert.tags[0]).to.equal("tag3");
+                    expect(alert.tags[1]).to.equal("tag4");
+                    expect(alert.owner).to.equal("user1@opsgenie.com");
+                    callback(null, 'done');
+                });
+            }
+        ], function (err, result) {
+            expect(err).equal(null);
+            if (result === "done") {
+                done();
+            }
+        });
+
+    });
+
 
     /**
      * this test is useful when executed against real service. It cleans up all created alerts
