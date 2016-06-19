@@ -137,3 +137,100 @@ nock('https://api.***REMOVED***:443', {"encodedQueryParams":true})
             server: 'cloudflare-nginx',
             'cf-ray': '2b18b45d53450f69-FRA' });
 
+
+nock('https://api.***REMOVED***:443', {"encodedQueryParams":true})
+    .post('/v1/json/alert/', {"message":"Long list of adding test","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":201,"code":200,"alertId":"f6f14723-5340-4f90-aeba-44229dedbb82","message":"alert created","status":"successful"}, { date: 'Sun, 19 Jun 2016 13:33:44 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=dbe483a63e06a0e9280ac2c2fc7e2320e1466343223; expires=Mon, 19-Jun-17 13:33:43 GMT; path=/; domain=.***REMOVED***; HttpOnly' ],
+        took: '201',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b575aba881115d7-FRA' });
+
+
+nock('https://api.***REMOVED***:443', {"encodedQueryParams":true})
+    .post('/v1/json/alert/recipient', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","recipient":"user1@opsgenie.com","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":74,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 13:33:44 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=d7bf466826d00651369b9ddb793ffe7801466343224; expires=Mon, 19-Jun-17 13:33:44 GMT; path=/; domain=.***REMOVED***; HttpOnly' ],
+        took: '74',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b575ac127202666-FRA' });
+
+
+nock('https://api.***REMOVED***:443', {"encodedQueryParams":true})
+    .post('/v1/json/alert/team', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","team":"team1","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":84,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 13:33:45 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=dc3e6d1b98e8aaf875243f741103cdeb91466343225; expires=Mon, 19-Jun-17 13:33:45 GMT; path=/; domain=.***REMOVED***; HttpOnly' ],
+        took: '84',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b575ac550d12666-FRA' });
+
+
+nock('https://api.***REMOVED***:443', {"encodedQueryParams":true})
+    .post('/v1/json/alert/tags', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","tags":"tag1, tag2","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":50,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 13:33:46 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=dfa48c12666d4e8b5358eb02b85f0b97d1466343226; expires=Mon, 19-Jun-17 13:33:46 GMT; path=/; domain=.***REMOVED***; HttpOnly' ],
+        took: '50',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b575acc4dbb0f45-FRA' });
+
+
+nock('https://api.***REMOVED***:443', {"encodedQueryParams":true})
+    .post('/v1/json/alert/details', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","details":{"prop1":"val1","prop2":"val2"},"apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":50,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 13:33:47 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=dafc1787e37b7decfe03204da5b7686ad1466343227; expires=Mon, 19-Jun-17 13:33:47 GMT; path=/; domain=.***REMOVED***; HttpOnly' ],
+        took: '50',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b575ad2dad5270e-FRA' });
+
+
+nock('https://api.***REMOVED***:443', {"encodedQueryParams":true})
+    .get('/v1/json/alert/recipient', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","details":{"prop1":"val1","prop2":"val2"},"apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .query({"id":"f6f14723-5340-4f90-aeba-44229dedbb82","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":27,"groups":{},"users":[{"method":"","state":"notactive","stateChangedAt":1466343224780,"username":"user1@opsgenie.com"}]}, { date: 'Sun, 19 Jun 2016 13:33:47 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=ddf65e563068c2eaf338faf3f1c5347401466343227; expires=Mon, 19-Jun-17 13:33:47 GMT; path=/; domain=.***REMOVED***; HttpOnly' ],
+        took: '27',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b575ad5961b2798-FRA' });
+
+
+nock('https://api.***REMOVED***:443', {"encodedQueryParams":true})
+    .post('/v1/json/alert/takeOwnership', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"took":43,"code":200,"status":"successful"}, { date: 'Sun, 19 Jun 2016 13:33:49 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=deae5b9df7e817e39433ae73b200fd55e1466343229; expires=Mon, 19-Jun-17 13:33:49 GMT; path=/; domain=.***REMOVED***; HttpOnly' ],
+        took: '44',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b575add621e26b4-FRA' });
+
+
+nock('https://api.***REMOVED***:443', {"encodedQueryParams":true})
+    .get('/v1/json/alert/', {"id":"f6f14723-5340-4f90-aeba-44229dedbb82","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .query({"id":"f6f14723-5340-4f90-aeba-44229dedbb82","apiKey":"91e58022-8be4-4590-a4f0-0d4030bd9b0d"})
+    .reply(200, {"owner":"System","took":11,"acknowledged":false,"teams":["team1"],"count":1,"description":"","source":"144.122.26.157","message":"Long list of adding test","isSeen":true,"tags":["tag1","tag2"],"createdAt":1466343224033000200,"systemData":{"integrationType":"API","integrationName":"Default API","integrationId":"616f9d46-d46d-475c-ae5a-1d77e866747f"},"recipients":["user1@opsgenie.com"],"tinyId":"380","alias":"f6f14723-5340-4f90-aeba-44229dedbb82","details":{"prop1":"val1","prop2":"val2"},"id":"f6f14723-5340-4f90-aeba-44229dedbb82","actions":[],"entity":"","updatedAt":1466343229132000300,"status":"open"}, { date: 'Sun, 19 Jun 2016 13:33:49 GMT',
+        'content-type': 'application/json; charset=UTF-8',
+        'transfer-encoding': 'chunked',
+        connection: 'close',
+        'set-cookie': [ '__cfduid=d8ab501db2a7e3805918fa86bac86fa3c1466343229; expires=Mon, 19-Jun-17 13:33:49 GMT; path=/; domain=.***REMOVED***; HttpOnly' ],
+        took: '11',
+        server: 'cloudflare-nginx',
+        'cf-ray': '2b575adfc3d015a7-FRA' });
