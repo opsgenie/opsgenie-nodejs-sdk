@@ -343,9 +343,33 @@ describe('ALERT_API_TEST', function () {
                 done();
             }
         });
+    });
+
+    it('renotify', function (done) {
+
+        var create_alert_json = {
+            "message": "renotify test alert",
+            "recipients": "user1@opsgenie.com, team1"
+        };
+
+        opsgenie.alert.create(create_alert_json, function (error, alertCreateSuccess) {
+            expect(error).equal(null);
+
+            var renotify_json = {
+                "id": alertCreateSuccess.alertId,
+                "recipients": "user1@opsgenie.com"
+            };
+
+            opsgenie.alert.renotify(renotify_json, function (error, renotifySuccess) {
+                expect(error).equal(null);
+                expect(renotifySuccess.code).to.equal(200);
+                done();
+            });
+        });
 
     });
 
+    // TODO: snooze and executeAction tests should be written
 
     /**
      * this test is useful when executed against real service. It cleans up all created alerts
