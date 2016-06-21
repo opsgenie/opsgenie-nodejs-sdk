@@ -3,7 +3,7 @@
 var opsgenie = require('../../');
 
 opsgenie.configure({
-    'api_key': 'd1871497-38bc-4222-9063-32062fc6f2f4'
+    'api_key': 'your_api_key'
 });
 
 // optional for dev purposes
@@ -11,7 +11,7 @@ opsgenie.configure({
 
 });*/
 
-opsgenie.alert.get({id: "41fbe997-03cc-40ff-a4c4-7674b86b1490"}, function (error, alert) {
+opsgenie.alert.get({id: "your_alert_id"}, function (error, alert) {
     if (error) {
         console.error(error);
     } else {
