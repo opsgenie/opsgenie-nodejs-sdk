@@ -40,7 +40,7 @@ opsgenie.configure({
 ```
 
 ```js
-opsgenie.alert.get({id: "request_alert_id"}, function (error, alert) {
+opsgenie.alert.get({id: "alert_id"}, function (error, alert) {
     if (error) {
         // handle error
     } else {
