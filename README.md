@@ -1,8 +1,6 @@
 # OpsGenie Node.js SDK
 
-CI Status: [![Build Status](https://travis-ci.com/srhtcn/opsgenie-nodejs-sdk.svg?token=QTDpPBArevfhSpyxWwwz&branch=master)](https://travis-ci.com/srhtcn/opsgenie-nodejs-sdk)
-
-This is the repository for Node.js SDK of OpsGenie. 
+This is the repository for Node.js SDK of OpsGenie.
 
 ## Aim and Scope
 
