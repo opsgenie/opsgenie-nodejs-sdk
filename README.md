@@ -48,3 +48,8 @@ opsgenie.alert.get({id: "alert_id"}, function (error, alert) {
     }
 });
 ```
+## Samples
+
+More samples can be found under `/samples` directory
+
+Also, checkout "[Node.js SDK page](https://www.opsgenie.com/docs/api-and-client-libraries/opsgenie-nodejs-api)" for detailed documentation
