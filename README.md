@@ -1,6 +1,7 @@
 # OpsGenie Node.js SDK
 
 [![npm version](https://badge.fury.io/js/opsgenie-sdk.svg)](https://badge.fury.io/js/opsgenie-sdk)
+[![Dependency Status](https://david-dm.org/opsgenie/opsgenie-nodejs-sdk.svg)](https://david-dm.org/opsgenie/opsgenie-nodejs-sdk)
 
 This is the repository for Node.js SDK of OpsGenie.
 
