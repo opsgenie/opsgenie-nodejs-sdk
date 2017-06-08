@@ -11,7 +11,8 @@ OpsGenie Node.js SDK aims to access OpsGenie Web API through HTTP calls from Nod
 
 OpsGenie Node.js SDK covers:
 
-* Alert API (TODO: only attachFile method is missing)
+* Alert API v2
+* Alert API 
 * User API
 * Group API
 * Team API
@@ -41,7 +42,12 @@ opsgenie.configure({
 ```
 
 ```js
-opsgenie.alert.get({id: "alert_id"}, function (error, alert) {
+var get_alert_identifier = {
+    identifier : "alert_id",
+    identifierType : "id"
+};
+
+opsgenie.alertV2.get(get_alert_identifier, function (error, alert) {
     if (error) {
         // handle error
     } else {
