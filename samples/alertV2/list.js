@@ -17,7 +17,7 @@ var list_params = {
     offset : 0,
     limit : 10,
     sort : "alias",
-    oder : "desc"
+    order : "desc"
 };
 
 opsgenie.alertV2.list(list_params, function (error, alerts) {
