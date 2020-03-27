@@ -13,6 +13,7 @@ OpsGenie Node.js SDK covers:
 
 * Alert API v2
 * Alert API 
+* User API v2
 * User API
 * Group API
 * Team API
