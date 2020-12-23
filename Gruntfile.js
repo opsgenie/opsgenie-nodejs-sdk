@@ -28,12 +28,12 @@ module.exports = function (grunt) {
     });
 
     grunt.loadNpmTasks("grunt-contrib-jshint");
-    grunt.loadNpmTasks('grunt-simple-mocha');
+    // grunt.loadNpmTasks('grunt-simple-mocha');
 
     // Test task
-    grunt.registerTask("test", ["simplemocha"]);
+    // grunt.registerTask("test", ["simplemocha"]);
 
     // Default task
-    grunt.registerTask("default", ["jshint", "simplemocha"]);
+    grunt.registerTask("default", ["jshint"]);
 
 };

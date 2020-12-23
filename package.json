@@ -37,14 +37,10 @@
   "devDependencies": {
     "async": "^2.0.0-rc.6",
     "chai": "^3.5.0",
-    "coveralls": "~2.11.9",
     "grunt": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-nodeunit": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.1",
     "grunt-jsdoc": "^2.1.0",
-    "grunt-simple-mocha": "^0.4.1",
-    "mocha": "^2.5.3",
     "nock": "^8.0.0"
   },
   "readmeFilename": "README.md"
