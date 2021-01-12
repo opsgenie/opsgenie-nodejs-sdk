@@ -4,7 +4,7 @@
   "description": "OpsGenie Node.js SDK",
   "main": "./index.js",
   "scripts": {
-    "test": "grunt"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -37,11 +37,7 @@
   "devDependencies": {
     "async": "^2.0.0-rc.6",
     "chai": "^3.5.0",
-    "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-uglify": "^1.0.1",
-    "grunt-jsdoc": "^2.1.0",
-    "nock": "^8.0.0"
+    "jest": "^26.6.3"
   },
   "readmeFilename": "README.md"
 }
