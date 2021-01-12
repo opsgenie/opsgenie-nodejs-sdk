@@ -11,22 +11,22 @@ OpsGenie Node.js SDK aims to access OpsGenie Web API through HTTP calls from Nod
 
 OpsGenie Node.js SDK covers:
 
-* Alert API v2
-* Alert API 
-* User API
-* Group API
-* Team API
-* Escalation API (TODO: will be available soon)
-* Schedule API (TODO: will be available soon)
-* Schedule Override API (TODO: will be available soon)
-* Forwarding Rule API (TODO: will be available soon)
-* Heartbeat API (TODO: will be available soon)
-* Integration API (TODO: will be available soon)
-* Policy API (TODO: will be available soon)
+- Alert API v2
+- User API
+- Group API
+- Team API
+- Escalation API (TODO: will be available soon)
+- Schedule API (TODO: will be available soon)
+- Schedule Override API (TODO: will be available soon)
+- Forwarding Rule API (TODO: will be available soon)
+- Heartbeat API (TODO: will be available soon)
+- Integration API (TODO: will be available soon)
+- Policy API (TODO: will be available soon)
 
 Future releases are subject to be delivered for packing more APIs soon.
 
 ## Installation
+
 Node.js version >=0.6.x is required.
 
 `npm install opsgenie-sdk`
@@ -34,27 +34,28 @@ Node.js version >=0.6.x is required.
 ## Getting Started
 
 ```js
-var opsgenie = require('opsgenie-sdk');
+var opsgenie = require("opsgenie-sdk");
 
 opsgenie.configure({
-    'api_key': 'your_api_key'
+  api_key: "your_api_key",
 });
 ```
 
 ```js
 var get_alert_identifier = {
-    identifier : "alert_id",
-    identifierType : "id"
+  identifier: "alert_id",
+  identifierType: "id",
 };
 
 opsgenie.alertV2.get(get_alert_identifier, function (error, alert) {
-    if (error) {
-        // handle error
-    } else {
-        console.log("Alert data received", alert);
-    }
+  if (error) {
+    // handle error
+  } else {
+    console.log("Alert data received", alert);
+  }
 });
 ```
+
 ## Samples
 
 More samples can be found under `/samples` directory
