@@ -41,6 +41,15 @@ opsgenie.configure({
 });
 ```
 
+Those using the European Service Region should set the EU endpooint in the configuration along with the API key.
+
+```js
+opsgenie.configure({
+    'api_key': 'your_api_key',
+    'host': 'https://api.eu.opsgenie.com',
+});
+```
+
 ```js
 var get_alert_identifier = {
   identifier: "alert_id",
