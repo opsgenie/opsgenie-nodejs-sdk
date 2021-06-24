@@ -13,10 +13,11 @@ OpsGenie Node.js SDK covers:
 
 - Alert API v2
 - User API
+- User API v2
 - Group API
 - Team API
 - Heartbeat API
-- Incident API  
+- Incident API
 - Escalation API (TODO: will be available soon)
 - Schedule API (TODO: will be available soon)
 - Schedule Override API (TODO: will be available soon)
