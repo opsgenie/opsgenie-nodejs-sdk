@@ -18,7 +18,7 @@
     "sdk"
   ],
   "dependencies": {
-    "requestretry": "^1.8.0"
+    "requestretry": "^7.0.0"
   },
   "author": {
     "name": "Serhat Can",
