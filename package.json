@@ -1,6 +1,6 @@
 {
   "name": "opsgenie-sdk",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "OpsGenie Node.js SDK",
   "main": "./index.js",
   "scripts": {
